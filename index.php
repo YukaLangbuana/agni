@@ -7,22 +7,17 @@
       echo "<h1>Opened database successfully</h1>";
    }
 
-   $sql = "SELECT * FROM business";
+   function fill_state($db){
+       $output = '';
+       $sql = "SELECT DISTINCT state FROM business";
+       $result = pg_query($db, $sql);
 
-   $response = pg_query($db, $sql);
+       while($row = pg_fetch_row($result)) {
+           $output .= "<option value='.$row.'>".$row."</option>";
+       }
 
-   if (!$response) {
-       echo pg_last_error($db);
-       exit;
+       return $output;
    }
-   
-    while($row = pg_fetch_row($response)) {
-        echo "NAME = ". $row[0] . "\n";
-        echo "STATE = ". $row[1] ."\n";
-        echo "CITY = ". $row[2] ."\n";
-    }
-
-   pg_close($db);
    
 ?>
 <html>
@@ -43,15 +38,9 @@
                     <div class="wrapper">
                         <form>
                             <h2>Run Query</h2>
-                            <select class="form-control" onchange="alert(this.selectedIndex.value)">
+                            <select class="form-control">
                                     <option value="">Select a State</option>
-                                    <option value="PA">Pennsylvania</option>
-                                    <option value="SC">South Carolina</option>
-                                    <option value="IL">Illinois</option>
-                                    <option value="WI">Wisconsin</option>
-                                    <option value="NV">Nevada</option>
-                                    <option value="NC">North Carolina</option>
-                                    <option value="AZ">Arizona</option>
+                                    <?php echo fill_state($db); ?>
                             </select>
                             <br>
                             <select class="form-control">

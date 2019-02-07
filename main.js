@@ -1,3 +1,3 @@
-function firstQuery() {
-    alert("HOORAH!")
+function firstQuery(state) {
+    
 }
