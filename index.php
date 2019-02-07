@@ -1,9 +1,9 @@
 <?php
    $db = pg_connect(getenv("DATABASE_URL"));
    if(!$db) {
-      echo "Error : Unable to open database\n";
+      echo "<h1>Error : Unable to open database</h1>";
    } else {
-      echo "Opened database successfully\n";
+      echo "<h1>Opened database successfully</h1>";
    }
 ?>
 <html>
