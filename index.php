@@ -50,12 +50,12 @@
                     <div class="wrapper">
                         <form>
                             <h2>Run Query</h2>
-                            <select class="form-control">
+                            <select class="form-control" id="state">
                                     <option value="">Select a State</option>
                                     <?php echo fill_state($db); ?>
                             </select>
                             <br>
-                            <select class="form-control">
+                            <select class="form-control" id="city">
                                 <option>Select City</option>
                                 <?php echo fill_city($db); ?>
                             </select>
@@ -98,3 +98,23 @@
         </div>
     </body>
 </html>
+
+<script>
+
+    $(document).ready(function(){
+        $('#state').change(function(){
+            var state_code = $(this).val()
+
+            $.ajax({
+                url:"load_data.php";
+                method:"POST";
+                data: {state_code:state_code},
+                success:function(data){
+                    $('#city').html(data);
+                }
+            })
+
+        });
+    });
+
+</script>
