@@ -1,7 +1,7 @@
 <?php
    $db = pg_connect(getenv("DATABASE_URL"));
 
-    function get_db_connection_status(){
+    function get_db_connection_status($db){
         $status = "";
         if(!$db) {
             $status = "<h3>🛑 Database Not Connected</h3>";
@@ -52,13 +52,13 @@
     <body>
         <div class="content">
             <div class="row">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <div class="wrapper">
-                            <?php echo get_db_connection_status(); ?>
-                        </div>
+                <div class="col-sm-5">
+                    <div class="wrapper">
+                        <?php echo get_db_connection_status($db); ?>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-5">
                     <div class="wrapper">
                         <form>
