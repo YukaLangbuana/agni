@@ -45,8 +45,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-        <script src="main.js"></script>
-        <script src="jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
     </head>
 
     <body>
@@ -101,7 +100,7 @@
                     var state_code = $(this).val();
 
                     $.ajax({
-                        url:"load_data.php",
+                        url:"php/load_data.php",
                         method:"POST",
                         data: {state_code:state_code},
                         success:function(data){
@@ -116,7 +115,7 @@
                     var city = $('#city').val();
 
                     $.ajax({
-                        url:"run_query.php",
+                        url:"php/run_query.php",
                         method:"POST",
                         data: {state_code:state_code, city:city},
                         success:function(data){
