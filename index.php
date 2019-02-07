@@ -56,7 +56,6 @@
                             </select>
                             <br>
                             <select class="form-control" id="city">
-                                <option>Select City</option>
                                 <?php echo fill_city($db); ?>
                             </select>
                             <br>
@@ -111,6 +110,7 @@
                 data: {state_code:state_code},
                 success:function(data){
                     $('#city').html(data);
+                    alert(data);
                 }
             })
 
