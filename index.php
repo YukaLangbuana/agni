@@ -43,7 +43,7 @@
                     <div class="wrapper">
                         <form>
                             <h2>Run Query</h2>
-                            <select class="form-control" onchange="alert('hoorah!')">
+                            <select class="form-control" onchange="alert(this.selectedIndex.value)">
                                     <option value="">Select a State</option>
                                     <option value="PA">Pennsylvania</option>
                                     <option value="SC">South Carolina</option>
