@@ -101,7 +101,6 @@
             $(document).ready(function(){
                 $('#state').change(function(){
                     var state_code = $(this).val();
-                    alert(state_code);
 
                     $.ajax({
                         url:"load_data.php",
@@ -109,7 +108,6 @@
                         data: {state_code:state_code},
                         success:function(data){
                             $('#city').html(data);
-                            alert("HOORAH!");
                         }
                     });
 
