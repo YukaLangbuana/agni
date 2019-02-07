@@ -76,21 +76,6 @@
                             </tr>
                         </thead>
                         <tbody id = "table-content">
-                            <tr>
-                                <td>Advance Auto Parts</td>
-                                <td>PA</td>
-                                <td>Carnegie</td>
-                            </tr>
-                            <tr>
-                                <td>Alexion's Bar & Grill</td>
-                                <td>PA</td>
-                                <td>Carnegie</td>
-                            </tr>
-                            <tr>
-                                <td>Amerifit</td>
-                                <td>PA</td>
-                                <td>Carnegie</td>
-                            </tr>
                         </tbody>
                     </table>
                     </div>
@@ -118,7 +103,14 @@
                     var state_code = $('#state').val();
                     var city = $('#city').val();
 
-                    alert(state_code+city);
+                    $.ajax({
+                        url:"run_query.php",
+                        method:"POST",
+                        data: {state_code:state_code, city:city},
+                        success:function(data){
+                            $('#table-content').html(data);
+                        }
+                    });
 
                 });
             });
