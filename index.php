@@ -7,7 +7,7 @@
       echo "<h1>Opened database successfully</h1>";
    }
 
-   function fill_state($db){
+    function fill_state($db){
        $output = '';
        $sql = "SELECT DISTINCT state FROM business";
        $result = pg_query($db, $sql);
@@ -17,7 +17,19 @@
        }
 
        return $output;
-   }
+    }
+
+    function fill_city($db){
+        $output = '';
+        $sql = "SELECT DISTINCT state FROM business";
+        $result = pg_query($db, $sql);
+
+        while($row = pg_fetch_row($result)) {
+            $output .= "<option value='.$row[0].'>".$row[0]."</option>";
+        }
+
+        return $output;
+    }
    
 ?>
 <html>
@@ -45,6 +57,7 @@
                             <br>
                             <select class="form-control">
                                 <option>Select City</option>
+                                <?php echo fill_city($db); ?>
                             </select>
                             <br>
                             <button type="submit" class="btn btn-primary btn-block">GO FIND!</button>
