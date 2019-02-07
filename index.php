@@ -41,6 +41,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
         <script src="main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -100,7 +101,7 @@
             $(document).ready(function(){
                 $('#state').change(function(){
                     var state_code = $(this).val();
-                    alert("I got clicked")
+                    alert("I got clicked");
 
                     $.ajax({
                         url:"load_data.php";
