@@ -1,10 +1,23 @@
 <?php
    $db = pg_connect(getenv("DATABASE_URL"));
+
    if(!$db) {
       echo "<h1>Error : Unable to open database</h1>";
    } else {
       echo "<h1>Opened database successfully</h1>";
    }
+
+   $sql = "SELECT * FROM business";
+
+   $response = pg_query($db, $sql);
+
+   if (!$response) {
+       echo pg_last_error($db);
+       exit;
+   }
+   echo pg_fetch_row($response);
+   pg_close($db);
+   
 ?>
 <html>
     <head>
