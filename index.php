@@ -57,10 +57,11 @@
                             </select>
                             <br>
                             <select class="form-control" id="city">
+                                <option value="">Select a City</option>
                                 <?php echo fill_city($db); ?>
                             </select>
                             <br>
-                            <button type="submit" class="btn btn-primary btn-block">GO FIND!</button>
+                            <button type="submit" class="btn btn-primary btn-block" id="run-query">GO FIND!</button>
                         </form>
                     </div>
                 </div>
@@ -74,7 +75,7 @@
                                 <th scope="col">City</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id = "table-content">
                             <tr>
                                 <td>Advance Auto Parts</td>
                                 <td>PA</td>
@@ -110,6 +111,14 @@
                             $('#city').html(data);
                         }
                     });
+
+                });
+
+                $('#run-query').click(function(){
+                    var state_code = $('#state').val();
+                    var city = $('#city').val();
+
+                    alert(state_code+city);
 
                 });
             });
