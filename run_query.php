@@ -11,7 +11,7 @@ if(isset($_POST["state_code"], $_POST["city"])){
     $result = pg_query($db, $sql);
 
     while($row = pg_fetch_row($result)) {
-        $output .= "<tr><td>'".$row[0]."'</td><td>'".$row[1]."'</td><td>'".$row[2]."'</td></tr>";
+        $output .= "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td></tr>";
     }
 
     echo $output;
