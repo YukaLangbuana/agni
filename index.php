@@ -13,7 +13,7 @@
        $result = pg_query($db, $sql);
 
        while($row = pg_fetch_row($result)) {
-           $output .= "<option value='.$row[0].'>".$row[0]."</option>";
+           $output .= "<option value='".$row[0]."'>".$row[0]."</option>";
        }
 
        return $output;
@@ -25,7 +25,7 @@
         $result = pg_query($db, $sql);
 
         while($row = pg_fetch_row($result)) {
-            $output .= "<option value='.$row[0].'>".$row[0]."</option>";
+            $output .= "<option value='".$row[0]."'>".$row[0]."</option>";
         }
 
         return $output;
