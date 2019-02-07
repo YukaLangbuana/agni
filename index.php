@@ -95,26 +95,25 @@
                 </div>
             </div>
         </div>
+        <script>
+
+            $(document).ready(function(){
+                $('#state').change(function(){
+                    var state_code = $(this).val()
+
+                    $.ajax({
+                        url:"load_data.php";
+                        method:"POST";
+                        data: {state_code:state_code},
+                        success:function(data){
+                            $('#city').html(data);
+                            alert(data);
+                        }
+                    })
+
+                });
+            });
+
+        </script>
     </body>
 </html>
-
-<script>
-
-    $(document).ready(function(){
-        $('#state').change(function(){
-            var state_code = $(this).val()
-
-            $.ajax({
-                url:"load_data.php";
-                method:"POST";
-                data: {state_code:state_code},
-                success:function(data){
-                    $('#city').html(data);
-                    alert(data);
-                }
-            })
-
-        });
-    });
-
-</script>
