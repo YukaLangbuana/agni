@@ -16,7 +16,7 @@
        exit;
    }
    
-    while($row = pg_fetch_row($ret)) {
+    while($row = pg_fetch_row($response)) {
         echo "NAME = ". $row[0] . "\n";
         echo "STATE = ". $row[1] ."\n";
         echo "CITY = ". $row[2] ."\n";
