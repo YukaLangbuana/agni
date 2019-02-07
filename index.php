@@ -61,7 +61,7 @@
                                 <?php echo fill_city($db); ?>
                             </select>
                             <br>
-                            <button type="submit" class="btn btn-primary btn-block" id="run-query">GO FIND!</button>
+                            <input type="button" class="btn btn-primary btn-block" id="run-query">GO FIND!</button>
                         </form>
                     </div>
                 </div>
