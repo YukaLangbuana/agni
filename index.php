@@ -1,5 +1,5 @@
 <?php
-   $db = pg_connect(getenv("DATABASE_URL"));
+    $db = pg_connect(getenv("DATABASE_URL"));
 
     function get_db_connection_status($db){
         $status = "";
