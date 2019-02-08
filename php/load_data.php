@@ -9,7 +9,7 @@ if(isset($_POST["state_code"])){
         $sql = "SELECT DISTINCT city FROM business WHERE state = '".$_POST["state_code"]."' ORDER BY city";
     }
     else{
-        $sql = "SELECT DISTINCT city FROM business";
+        $sql = "SELECT DISTINCT city FROM business ORDER BY city";
     }
     $result = pg_query($db, $sql);
 

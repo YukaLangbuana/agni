@@ -26,7 +26,7 @@
 
     function fill_city($db){
         $output = '';
-        $sql = "SELECT DISTINCT city FROM business ORDER BY state";
+        $sql = "SELECT DISTINCT city FROM business ORDER BY city";
         $result = pg_query($db, $sql);
 
         while($row = pg_fetch_row($result)) {
