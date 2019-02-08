@@ -6,7 +6,7 @@ $output = '';
 
 if(isset($_POST["state_code"])){
     if($_POST["state_code"] != ''){
-        $sql = "SELECT DISTINCT city FROM business WHERE state = '".$_POST["state_code"]."'";
+        $sql = "SELECT DISTINCT city FROM business WHERE state = '".$_POST["state_code"]."' ORDER BY city";
     }
     else{
         $sql = "SELECT DISTINCT city FROM business";
