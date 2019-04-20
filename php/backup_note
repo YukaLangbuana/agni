@@ -1,0 +1,15 @@
+elseif(isset($_POST["category"], $_POST["zipcode"])){
+    if($_POST["category"] != ''){
+        $sql = "SELECT DISTINCT business.name FROM business JOIN category ON business.busID=category.busID WHERE category.category_name LIKE '".$_POST["category"]."' AND zipcode = '".$_POST["zipcode"]."' ORDER BY business.name";
+    }
+    else{
+        $sql = "SELECT DISTINCT name FROM business ORDER BY name";
+    }
+    $result = pg_query($db, $sql);
+
+    while($row = pg_fetch_row($result)) {
+        $output .= "<option value='".$row[0]."'>".$row[0]."</option>";
+    }
+
+    echo $output;
+}

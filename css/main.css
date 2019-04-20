@@ -16,4 +16,8 @@ form {
     padding-bottom: 30px;
 }
 
+textarea {
+    resize: none;
+    outline: none;
+}
 
